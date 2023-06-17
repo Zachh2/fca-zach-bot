@@ -1,6 +1,6 @@
 {
   "name": "fca-zach-bot",
-  "version": "1.0.1",
+  "version": "4.0.1",
   "description": "Fb-Chat Api",
   "main": "index.js",
   "scripts": {

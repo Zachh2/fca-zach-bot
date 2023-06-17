@@ -1,8 +1,8 @@
 {
-	"name": "ChatBot",
+	"name": "fca-zach-bot",
 	"version": "16.2.23",
 	"description": "A simple Facebook Messenger Bot made by ZACH.",
-	"main": "anup.js",
+	"main": "zach.js",
 	"scripts": {
 		"start": "node index",
 		"login": "node login",

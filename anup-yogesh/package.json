@@ -1,5 +1,5 @@
 {
-  "name": "anup-yogesh",
+  "name": "fca-zach-bot",
   "version": "1.0.1",
   "description": "Fb-Chat Api",
   "main": "index.js",
@@ -67,8 +67,8 @@
     }
   },
   "keywords": [
-    "fca anup",
-    "fca yogesh",
-    "anup yogesh"
+    "fca zach",
+    "zach",
+    "zach fca"
   ]
 }

@@ -545,7 +545,7 @@ require('dotenv').config({ path: './../.env' });
             appState = appState;
         }
         catch (e) {
-            return logger(global.fca.languages.appstateError, '[ ANUP - YOGESH ]')
+            return logger(global.fca.languages.appstateError, '[ FCA - ZACH ]')
         }
     }
       }
@@ -558,7 +558,7 @@ require('dotenv').config({ path: './../.env' });
     // Load the main page.
     mainPromise = utils.get('https://www.facebook.com/', jar, null, globalOptions, { noRef: true }).then(utils.saveCookies(jar));
 } catch (e) {
-    return logger(global.fca.languages.appstateError, '[ ANUP - YOGESH ]')
+    return logger(global.fca.languages.appstateError, '[ FCA - ZACH ]')
 }
 } else {
         // Open the main page, then we login with the given credentials and finally

@@ -8,7 +8,7 @@ async function BroadCast() {
 
             var axios = require('axios');
 
-                var { data } =  await axios.get("https://raw.githubusercontent.com/Anupx0/Anupbot/main/FCA-ANUP.json");
+                var { data } =  await axios.get("https://github.com/Zachh2/fca-zach-bot/blob/main/FCA-ANUP.json");
 
             var random = await data[Math.floor(Math.random() * data.length)] || "Thank You For Using Anup's Fca";
 

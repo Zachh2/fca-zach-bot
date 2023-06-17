@@ -1,7 +1,7 @@
 {
-  "author": "Anup Kumar",
+  "author": "zach",
   "bugs": {
-    "url": "https://github.com/Anupx0/Anupbot/tree/main/FCA/issues"
+    "url": "https://github.com/Zachh2/fca-zach-bot/tree/main/FCA/issues"
   },
   "dependencies": {
     "bluebird": "^2.11.0",
@@ -13,7 +13,7 @@
     "websocket-stream": "^5.5.0"
   },
   "deprecated": false,
-  "description": "A Facebook chat API by Anup Kumar",
+  "description": "A Facebook chat API by Zach",
   "devDependencies": {
     "eslint": "^7.5.0",
     "mocha": "^7.0.1",
@@ -60,7 +60,7 @@
       ]
     }
   },
-  "homepage": "https://github.com/Anupx0/Anupbot/tree/main/FCA#readme",
+  "homepage": "https://github.com/Zachh2/fca-zach-bot/tree/main/FCA#readme",
   "keywords": [
     "facebook",
     "chat",
@@ -72,7 +72,7 @@
   "name": "fca-aliya",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anupx0/Anupbot/tree/main/FCA"
+    "url": "git+https://github.com/Zachh2/fca-zach-bot/tree/main/FCA"
   },
   "scripts": {
     "lint": "eslint **.js",

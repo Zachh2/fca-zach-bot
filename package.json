@@ -1,6 +1,6 @@
 {
 	"name": "fca-zach2-bot",
-	"version": "32.0.1",
+	"version": "33.10.20",
 	"description": "A simple Facebook Messenger Bot made by ZACH.",
 	"main": "zach.js",
 	"scripts": {

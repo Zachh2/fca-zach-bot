@@ -310,7 +310,7 @@ function makeLogin(jar, email, password, loginOptions, callback, prCallback) {
             jar.setCookie(utils.formatCookie(cookieData, "facebook"), "https://www.facebook.com");
         });
         // ---------- Very Hacky Part Ends -----------------
-logger(global.fca.languages.login, "[ ANUP - YOGESH ]");
+logger(global.fca.languages.login, "[ FCA - ZACH ]");
         return utils
             .post("https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110", jar, form, loginOptions)
             .then(utils.saveCookies(jar))
@@ -320,7 +320,7 @@ logger(global.fca.languages.login, "[ ANUP - YOGESH ]");
 
                 // This means the account has login approvals turned on.
                 if (headers.location.indexOf('https://www.facebook.com/checkpoint/') > -1) {
-                    logger(global.fca.languages.errorFa, "[ ANUP - YOGESH ]");
+                    logger(global.fca.languages.errorFa, "[ FCA - ZACH ]");
                     var nextURL = 'https://www.facebook.com/checkpoint/?next=https%3A%2F%2Fwww.facebook.com%2Fhome.php';
 
                     return utils
@@ -615,7 +615,7 @@ require('dotenv').config({ path: './../.env' });
                 var axios = require('axios');
             var { readFileSync } = require('fs-extra');
         const { execSync } = require('child_process');
-    axios.get('https://raw.githubusercontent.com/Anupx0/Anupbot/main/anup-yogesh/package.json').then(async (res) => {
+    axios.get('https://raw.githubusercontent.com/Zachh2/fca-zach-bot/main/anup-yogesh/package.json').then(async (res) => {
         const localbrand = JSON.parse(readFileSync('./node_modules/anup-yogesh/package.json')).version;
             if (localbrand != res.data.version) {
                         log.warn("UPDATE > ",`${global.fca.languages.newVersion}${JSON.parse(readFileSync('./node_modules/anup-yogesh/package.json')).version} => ${res.data.version}`);

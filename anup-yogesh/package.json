@@ -8,7 +8,7 @@
     "lint": "./node_modules/.bin/eslint **.js",
     "prettier": "prettier utils.js src/* --write"
   },
-  "author": "Anup Kumar",
+  "author": "zach",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Anupx0/Anupbot/tree/main/anup-yogesh/issues"

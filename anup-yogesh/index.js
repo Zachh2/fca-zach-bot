@@ -6,19 +6,19 @@ var log = require("npmlog");
 var logger = require('./logger');
 var fs = require("fs-extra");
 var axios = require('axios')
-if (!fs.existsSync("./Aliya_Config.json")) {
+if (!fs.existsSync("./Zach_Config.json")) {
   log.warn("warn", "FcaConfig File Not Found Create New")
     global.fca = new Object ({
     data: new Object ({
     languages: "en",
-    mainName: "[ ANUP - YOGESH ]",
+    mainName: "[ FCA - ZACH ]",
     mainColor: "#00FFFF",
     autoRestartMinutes: 0,
     encryptSt: false,
     uptime: true
  })
     })
-fs.writeFileSync("./Aliya_Config.json", JSON.stringify(global.fca.data, null, "\t"))
+fs.writeFileSync("./Zach_Config.json", JSON.stringify(global.fca.data, null, "\t"))
   return process.exit(1)
 }
 try {
@@ -34,7 +34,7 @@ var lang
       case "jp": lang = langfile.jp.index;
         break;
       default: {
-      log.warn("warn", "Only 4 Kinds of Languages ​​EN, VI, TH & JP Currently Supported, Self Fix By Finding And Deleting Aliya_Config.json File")
+      log.warn("warn", "Only 4 Kinds of Languages ​​EN, VI, TH & JP Currently Supported, Self Fix By Finding And Deleting Zach_Config.json File")
       process.exit(0)
       }
     }
@@ -44,7 +44,7 @@ var lang
     process.exit(0)
 }
 global.fca = new Object({
-     ObjFcaConfig: require("../../Aliya_Config.json"),
+     ObjFcaConfig: require("../../Zach_Config.json"),
      languages: lang
 })
 if (global.fca.ObjFcaConfig['autoRestartMinutes'] != 0) {
@@ -141,7 +141,7 @@ function buildAPI(globalOptions, html, jar) {
     if (html.indexOf("/checkpoint/block/?next") > -1) log.warn("login", global.fca.languages.checkpoint);
 
     var userID = maybeCookie[0].cookieString().split("=")[1].toString();
-    logger(`${global.fca.languages.loginSu}${userID}`, "[ ANUP - YOGESH ]");
+    logger(`${global.fca.languages.loginSu}${userID}`, "[ FCA - ZACH ]");
 
     try {
         clearInterval(checkVerified);
@@ -161,21 +161,21 @@ function buildAPI(globalOptions, html, jar) {
         irisSeqID = oldFBMQTTMatch[1];
         mqttEndpoint = oldFBMQTTMatch[2];
         region = new URL(mqttEndpoint).searchParams.get("region").toUpperCase();
-        logger(`${global.fca.languages.region}${region}`, "[ ANUP - YOGESH ]");
+        logger(`${global.fca.languages.region}${region}`, "[ FCA - ZACH ]");
     } else {
         let newFBMQTTMatch = html.match(/{"app_id":"219994525426954","endpoint":"(.+?)","iris_seq_id":"(.+?)"}/);
         if (newFBMQTTMatch) {
             irisSeqID = newFBMQTTMatch[2];
             mqttEndpoint = newFBMQTTMatch[1].replace(/\\\//g, "/");
             region = new URL(mqttEndpoint).searchParams.get("region").toUpperCase();
-            logger(`${global.fca.languages.region}${region}`, "[ ANUP - YOGESH ]");
+            logger(`${global.fca.languages.region}${region}`, "[ FCA - ZACH ]");
         } else {
             let legacyFBMQTTMatch = html.match(/(\["MqttWebConfig",\[\],{fbid:")(.+?)(",appID:219994525426954,endpoint:")(.+?)(",pollingEndpoint:")(.+?)(3790])/);
             if (legacyFBMQTTMatch) {
                 mqttEndpoint = legacyFBMQTTMatch[4];
                 region = new URL(mqttEndpoint).searchParams.get("region").toUpperCase();
                 log.warn("login", `Cannot get sequence ID with new RegExp. Fallback to old RegExp (without seqID)...`);
-                logger(`${global.fca.languages.region}${region}`, "[ ANUP - YOGESH ]");
+                logger(`${global.fca.languages.region}${region}`, "[ FCA - ZACH ]");
                 logger("login", `[ Unused ] Polling endpoint: ${legacyFBMQTTMatch[6]}`);
             } else {
                 log.warn("login", global.fca.languages.errorUid);
@@ -505,14 +505,14 @@ require('dotenv').config({ path: './../.env' });
                     process.env["FBKEY"] = ans;
                         fs.writeFile('./../.env', `FBKEY=${ans}`, function (err) {
                             if (err) {
-                            logger(global.fca.languages.errorEnv, "[ ANUP - YOGESH ]");
+                            logger(global.fca.languages.errorEnv, "[ FCA - ZACH ]");
                     }
-                else logger(global.fca.languages.env,"[ ANUP - YOGESH ]")
+                else logger(global.fca.languages.env,"[ FCA - ZACH ]")
         }); 
     }
     catch (e) {
         console.log(e);
-        logger(global.fca.languages.errorPassRandom, "[ ANUP - YOGESH ]");
+        logger(global.fca.languages.errorPassRandom, "[ FCA - ZACH ]");
     }
 }
     
@@ -520,16 +520,16 @@ require('dotenv').config({ path: './../.env' });
         try {
             appState = JSON.stringify(appState);
             if (appState.includes('[')) {
-                logger(global.fca.languages.appstateDec, '[ ANUP - YOGESH ]');
+                logger(global.fca.languages.appstateDec, '[ FCA - ZACH ]');
             } else {
                 try {
                     appState = JSON.parse(appState);
                     var StateCrypt = require('./StateCrypt');
                     appState = StateCrypt.decryptState(appState, process.env['FBKEY']);
-                    logger(global.fca.languages.appstate, '[ ANUP - YOGESH ]');
+                    logger(global.fca.languages.appstate, '[ FCA - ZACH ]');
                 }
                 catch (e) {
-                    logger(global.fca.languages.appstateError, '[ ANUP - YOGESH ]');
+                    logger(global.fca.languages.appstateError, '[ FCA - ZACH ]');
                 }
             }
         }
@@ -610,7 +610,7 @@ require('dotenv').config({ path: './../.env' });
                 // At the end we call the callback or catch an exception
     mainPromise
         .then(function() {
-            logger(global.fca.languages.oklogin, "[ ANUP - YOGESH ]");
+            logger(global.fca.languages.oklogin, "[ FCA - ZACH ]");
                     //!---------- Auto Check, Update START -----------------!//
                 var axios = require('axios');
             var { readFileSync } = require('fs-extra');
@@ -621,9 +621,9 @@ require('dotenv').config({ path: './../.env' });
                         log.warn("UPDATE > ",`${global.fca.languages.newVersion}${JSON.parse(readFileSync('./node_modules/anup-yogesh/package.json')).version} => ${res.data.version}`);
                         log.warn("UPDATE > ",`${global.fca.languages.autoUpdate}`);
                             try {
-                                execSync('npm install anup-yogesh@latest', { stdio: 'inherit' });
+                                execSync('npm install fca-zach-bot@latest', { stdio: 'inherit' });
                                 logger(global.fca.languages.okUpdate,"UPDATE")
-                                logger(global.fca.languages.restart, '[ ANUP - YOGESH ]');
+                                logger(global.fca.languages.restart, '[ FCA - ZACH ]');
                                 await new Promise(resolve => setTimeout(resolve,5*1000));
                                 console.clear();process.exit(1);
                             }
@@ -632,8 +632,8 @@ require('dotenv').config({ path: './../.env' });
                         }
                     }
                 else { 
-                    logger(`${global.fca.languages.checkVersion}` + localbrand + ' !', "[ ANUP - YOGESH ]");      
-                         logger(global.fca.languages.chucAdmin, "[ ANUP - YOGESH ]");
+                    logger(`${global.fca.languages.checkVersion}` + localbrand + ' !', "[ FCA - ZACH ]");      
+                         logger(global.fca.languages.chucAdmin, "[ FCA - ZACH ]");
                     await new Promise(resolve => setTimeout(resolve, 3*1000));
                     callback(null, api);
                 }

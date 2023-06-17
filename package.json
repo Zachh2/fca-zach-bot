@@ -1,6 +1,6 @@
 {
 	"name": "fca-zach-bot",
-	"version": "16.2.23",
+	"version": "4.0.1",
 	"description": "A simple Facebook Messenger Bot made by ZACH.",
 	"main": "zach.js",
 	"scripts": {
@@ -23,7 +23,7 @@
 	"bugs": {
 		"url": "https://github.com/Zachh2/fca-zach-bot/issues"
 	},
-	"homepage": "https://github.com/Anupx0/Anupbot",
+	"homepage": "https://github.com/Zachh2/fca-zach-bot",
 	"dependencies": {
 		"@miraipr0ject/assets": "",
 		"@replit/database": "^2.0.2",
